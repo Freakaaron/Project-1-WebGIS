@@ -17,3 +17,18 @@ The files that have been edits include `template.php`, `template.html`, and `tem
   *  **Third Query** - the_geom from (SELECT ST_Difference(cg.the_geom, sd.the_geom) as the_geom FROM cg, sd, aoi WHERE aoi.gid = 79) as foo using unique the_geom using srid=2236;
   *  **Fourth Query** - the_geom from (SELECT ST_Difference(sd.the_geom, cg.the_geom) as the_geom FROM cg, sd, aoi WHERE aoi.gid = 79) as foo using unique the_geom using srid=2236;
   *  **Fifth Query** - the_geom from (SELECT ST_SymDifference(cg.the_geom, sd.the_geom) as the_geom FROM cg, sd, aoi WHERE aoi.gid = 79) as foo using unique the_geom using srid=2236;
+
+# Results
+Please find the outputs of the above queries in the following links:
+
+1. ![Task1a](/Task1a.png)
+2. ![Task1b](/Task1b.png)
+3. ![Task1c](/Task1c.png)
+4. ![Task1d](/Task1d.png)
+5. ![Task1e](/Task1e.png)
+6. 
+   1. ![Task1fa](/Task1fa.png)
+   2. ![Task1fb](/Task1fb.png)
+   3. ![Task1fc](/Task1fc.png)
+   4. ![Task1fd](/Task1fd.png)
+   5. ![Task1fe](/Task1fe.png)
