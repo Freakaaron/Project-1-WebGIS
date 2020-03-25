@@ -21,14 +21,18 @@ The files that have been edits include `template.php`, `template.html`, and `tem
 # Results
 Please find the outputs of the above queries in the following links:
 
-1. ![Task1a](/Task1a.png)
-2. ![Task1b](/Task1b.png)
-3. ![Task1c](/Task1c.png)
-4. ![Task1d](/Task1d.png)
-5. ![Task1e](/Task1e.png)
+1. ![Task1a](/images/Task1a.png)
+2. ![Task1b](/images/Task1b.png)
+3. ![Task1c](/images/Task1c.png)
+4. ![Task1d](/images/Task1d.png)
+5. ![Task1e](/images/Task1e.png)
 6. 
-   1. ![Task1fa](/Task1fa.png)
-   2. ![Task1fb](/Task1fb.png)
-   3. ![Task1fc](/Task1fc.png)
-   4. ![Task1fd](/Task1fd.png)
-   5. ![Task1fe](/Task1fe.png)
+   1. ![Task1fa](/images/Task1fa.png)
+   2. ![Task1fb](/images/Task1fb.png)
+   3. ![Task1fc](/images/Task1fc.png)
+   4. ![Task1fd](/images/Task1fd.png)
+   5. ![Task1fe](/images/Task1fe.png)
+
+
+7. 1. ![Task1bbon](images/Task1bon.png)
+   2. ![Task1bbonb](images/Task1bonb.png)
