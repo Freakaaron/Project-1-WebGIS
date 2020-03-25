@@ -1,0 +1,70 @@
+MAP
+  IMAGETYPE      PNG
+  STATUS         ON 
+  EXTENT         913154.843600 120114.582600 1067382.510900 272932.046000
+  IMAGECOLOR     255 255 255  
+  SHAPEPATH      "/tmp"
+  
+  PROJECTION
+    "init=epsg:2263"
+  END
+
+  SYMBOL
+    NAME 'circle'
+    TYPE ELLIPSE
+    POINTS 1 1 END
+    FILLED TRUE
+  END
+  
+  OUTPUTFORMAT
+    NAME png
+    DRIVER "GD/PNG"
+    MIMETYPE "image/png"
+    IMAGEMODE RGB
+    EXTENSION "png"
+  END
+  
+  OUTPUTFORMAT
+    NAME jpeg
+    DRIVER "GD/JPEG"
+    MIMETYPE "image/jpeg"
+    IMAGEMODE RGB
+    EXTENSION "jpg"
+    FORMATOPTION QUALITY=80
+  END
+
+
+  WEB
+    METADATA
+       "wms_srs" 			"EPSG:2263 EPSG:4326"    
+       "wms_formats" 			'png'
+	wms_enable_request 		 "*"
+    END    
+  END
+  
+  # Start of LAYER DEFINITIONS ---------------------------------------------
+
+  LAYER # NYC Police Precinct begins here
+     NAME         aoi
+     DATA         aoi
+     STATUS       ON
+     TYPE         POINT
+     DUMP 	 TRUE
+     CONNECTIONTYPE POSTGIS
+     CONNECTION  "user=sing20 password=Blacklist1@$ dbname=d408 host=192.168.88.30"
+     DATA "the_geom from (SELECT * FROM aoi) as foo using unique gid using srid=2236"
+     TEMPLATE	 spwms.html
+     CLASS
+       NAME       "Area of interest"
+       STYLE
+	 SYMBOL 'circle'
+	 SIZE    5
+         COLOR        0 0 255
+       END
+     END
+   END # YC Police Precinct layer ends here
+
+ # End of LAYER DEFINITIONS -------------------------------
+
+END # All map files must come to an end just as all other things must come to...
+

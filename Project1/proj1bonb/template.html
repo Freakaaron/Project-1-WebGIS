@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script src="js/OpenLayers.js"></script>
+    <script type="text/javascript">
+        var lon = -73.9;
+        var lat = 40.7;
+        var zoom = 10;
+        var map, l_both;
+	var control;
+        function init(){
+            map = new OpenLayers.Map( 'map' );
+            //change 'zhang' to your login name
+            l_both = new OpenLayers.Layer.WMS( "Buffer",
+                    "/~sing20/proj1bonb/mapscripts/template.php?", {layers: 'buff',format: "image/png"});
+            map.addLayer(l_both);
+            map.setCenter(new OpenLayers.LonLat(lon, lat), zoom);
+	    control = new OpenLayers.Control.MousePosition({position: new OpenLayers.Pixel(100,0)});
+			map.addControl(control);
+        }
+	function send(){
+	   var buffer = Number(document.getElementById("buffer").value);
+	   if(!isNaN(buffer)) {
+	     map.destroy();
+	     map = new OpenLayers.Map( 'map' );
+            //change 'zhang' to your login name
+            l_both = new OpenLayers.Layer.WMS( "Buffer",
+                    "/~sing20/proj1bonb/mapscripts/template.php?buffer=" + buffer , {layers: 'buff',format: "image/png"});
+            map.addLayer(l_both);
+            map.setCenter(new OpenLayers.LonLat(lon, lat), zoom);
+                        map.addControl(new OpenLayers.Control.MousePosition({position: new OpenLayers.Pixel(100,0)}));
+	   }
+	}
+    </script>
+  </head>
+  <body onload="init()">
+    <h1 id="title">MapServer WMS and Bonus task with dynamic buffer size </h1>
+    <div id="map" style="width: 800px; height:600px;"></div>
+      <h1>Enter Buffer value:  </h1>
+      <input type="number" id="buffer"/>
+      <input type="button" value="Submit" onclick="send();"/>
+</body>
+</html>
+
+
+
+
